@@ -1,0 +1,267 @@
+@use '../abstracts/' as *;
+
+.cart {
+  max-width: 1200px;
+  margin: 3rem auto;
+  @include flex();
+
+  @include header__mobile {
+    flex-direction: column;
+
+    & > * {
+      width: 100%;
+    }
+  }
+
+  &__left {
+    width: 70%;
+    padding: 0 1rem;
+
+    @include header__mobile {
+      width: 100%;
+    }
+
+    &__title {
+      width: 100%;
+      background-color: #f1f1f1;
+      text-transform: uppercase;
+      font-family: $font-family-bold;
+      font-size: 1.2rem;
+      padding: 0.8rem 2rem;
+    }
+
+    & hr {
+      border: 1px solid #000;
+      margin: 2rem 0;
+    }
+
+    &__button {
+      @include flex(space-between, center);
+
+      &__item {
+        background-color: #303030;
+        color: #fff;
+        font-family: $font-family-bold;
+        font-size: 1rem;
+        text-transform: uppercase;
+        width: 240px;
+        height: 40px;
+        @include flex(center, center);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__right {
+    flex-grow: 1;
+    background-color: #f1f1f1;
+    padding: 0.8rem 1.25rem;
+
+    & > * ~ * {
+      margin: 1rem auto;
+    }
+
+    & hr {
+      padding-top: unset;
+      padding-bottom: unset;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-family: $font-family-bold;
+      font-size: 1.2rem;
+    }
+
+    &__promotion {
+      &__title {
+        text-transform: uppercase;
+        font-family: $font-family-bold;
+        margin-bottom: 0.5rem;
+      }
+      &__input {
+        position: relative;
+        width: 100%;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        padding: 0.5rem 0;
+
+        & input {
+          width: 100%;
+          border: none;
+          outline: none;
+        }
+
+        & button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          color: #fff;
+          background-color: $main-color;
+          font-family: $font-family-bold;
+          text-transform: uppercase;
+          padding: 0.6rem;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+
+    &__content {
+      margin: 2rem 0;
+      color:#808080;
+      font-weight: bold;
+      font-size: 0.9rem;
+
+      & > * {
+        margin: 0.5rem 0;
+        @include flex(space-between, center);
+      }
+
+      &__bottom {
+        &__price {
+          font-weight: normal;
+        }
+      }
+    }
+
+    &__total {
+      @include flex(space-between, center);
+      text-transform: uppercase;
+      font-family: $font-family-bold;
+      font-size: 1rem;
+    }
+
+    &__button {
+      width: 100%;
+      padding: 1rem 0;
+      color: #fff;
+      background-color: $main-color;
+      cursor: pointer;
+      @include flex(center, center);
+      font-family: $font-family-bold;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    & hr.dashed {
+      border: 1px dashed #8f8f8f;
+    }
+  }
+}
+
+.cart__item {
+  @include flex();
+  margin: 1rem auto;
+
+  & > * ~ * {
+    margin-left: 1rem;
+  }
+
+  &__image {
+    flex: 1;
+    cursor: pointer;
+
+    // & img {
+    //   width: 200px;
+    //   height: 200px;
+    // }
+  }
+
+  &__content {
+    width: 75%;
+
+    @include flex(flex-start, stretch);
+    flex-direction: column;
+
+    & > * {
+      margin-bottom: 1.5rem;
+    }
+
+    &__top {
+      @include flex(space-between, flex-start);
+      flex: 1;
+      font-family: $font-family-bold;
+
+      &__name {
+        text-transform: capitalize;
+        width: 70%;
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+
+      &__total-price {
+        color: $main-color;
+        font-size: 1.2rem;
+      }
+    }
+
+    &__middle {
+      color: #808080;
+    }
+
+    &__bottom {
+      @include flex(space-between, flex-end);
+
+      & > * {
+        width: 25%;
+      }
+
+      &__size {
+        color: #808080;
+      }
+
+      &__delete {
+        @include flex(center, center);
+        width: 15%;
+        padding: 0.5rem;
+        background-color: #303030;
+        cursor: pointer;
+
+        i.bx-trash {
+          font-size: 1.1rem;
+          font-weight: unset;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.cart__empty {
+  max-width: 1200px;
+  margin: 4rem auto;
+  text-align: center;
+  @include flex(center, center);
+  flex-direction: column;
+
+  & > * {
+    margin: 1rem 0;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-family: $font-family-bold;
+  }
+
+  & hr {
+    border: 1px solid #000;
+    width: 100%;
+  }
+
+  &__content {
+    margin: 2rem;
+  }
+
+  &__button {
+    background-color: #303030;
+    color: #fff;
+    font-family: $font-family-bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 240px;
+    height: 40px;
+    @include flex(center, center);
+    cursor: pointer;
+  }
+}

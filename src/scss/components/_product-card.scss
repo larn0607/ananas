@@ -1,0 +1,99 @@
+@use '../abstracts/' as *;
+
+.product-card {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+
+  & > * {
+    margin-bottom: 0.3rem;
+  }
+
+  &__image {
+    padding-top: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+
+    &.sold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include overlay();
+      z-index: 1;
+      transition: all 0.2s ease;
+    }
+
+    &.sold::after {
+      content: 'HẾT HÀNG';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      z-index: 1;
+      font-family: $font-family-bold;
+      font-size: 1.2rem;
+    }
+
+    button {
+      position: absolute;
+      bottom: 0;
+      transform: translateX(-50%);
+      font-family: $font-family-bold;
+      color: #fff;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      background-color: $main-color;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover button {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+
+      &:nth-child(1) {
+        transform: translateX(-50%) scale(1);
+      }
+      &:nth-child(2) {
+        transform: translateX(-50%) scale(0);
+      }
+    }
+
+    &:hover img {
+      &:nth-child(1) {
+        transform: translateX(-50%) scale(0);
+      }
+      &:nth-child(2) {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+  }
+
+  &__name {
+    font-family: $font-family-bold;
+    margin-top: 0.5rem;
+    a {
+      color: #000;
+    }
+  }
+
+  &__price {
+    font-family: $font-family-bold;
+  }
+}

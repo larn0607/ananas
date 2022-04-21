@@ -1,0 +1,36 @@
+@use '../abstracts/' as *;
+
+.slide-product {
+  &__slider {
+    .swiper-button-next, .swiper-button-prev {
+      top: 40%;
+
+      &::after {
+        color: #555;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__item {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1rem;
+
+    & > * {
+      margin-bottom: 0.3rem;
+    }
+
+    &__name {
+      font-family: $font-family-bold;
+      margin-top: 0.5rem;      
+      a {
+        color: #000;
+      }
+    }
+
+    &__price {
+      font-family: $font-family-bold;
+    }
+  }
+}

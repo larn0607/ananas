@@ -1,0 +1,40 @@
+@use '../abstracts/' as *;
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  &__blogs {
+    @include flex(center, center);
+    padding: 1rem;
+    flex-wrap: wrap;
+  
+    &__item {
+      width: 50%;
+      @include flex(center, center);
+      flex-direction: column;
+      padding: 1rem;
+
+      @include tablet {
+        
+      }
+  
+      &__title {
+        font-size: 1rem;
+        margin: 1rem 0;
+        
+        & a {
+          text-transform: uppercase;
+          font-family: 'Nunito Sans ExtraBold';
+          color: #000;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

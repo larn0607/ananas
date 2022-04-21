@@ -1,0 +1,138 @@
+@use '../abstracts/' as *;
+
+.cart-fixed {
+  position: fixed;
+  right: 0px;
+  top: 200px;
+  width: 40px;
+  height: 75px;
+  background-color: $main-color;
+  padding: 10px 2px;
+  font-family: $font-family-bold;
+  z-index: 100;
+
+  @include header__mobile {
+    display: none;
+  }
+
+  &__display {
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    max-height: 0;
+    z-index: 99;
+    background-color: #f1f1f1;
+    // opacity: 0;
+    transition: max-height 0.3s linear;
+    overflow: hidden;
+    // padding: 0 1rem;
+
+    & > * {
+      padding: 0.7rem 1rem;
+    }
+
+    & hr {
+      padding-top: unset;
+      margin: 0 1rem;
+      padding-bottom: unset;
+    }
+
+    &.active {
+      // opacity: 1;
+      max-height: 550px;
+      transition: max-height 0.2s linear;
+    }
+
+    &.active::after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: -5px;
+      width: 10px;
+      height: 10px;
+      background-color: $main-color;
+      transform: rotate(45deg);
+      z-index: 99;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-size: 1rem;
+    }
+
+    &__items {
+      max-height: 345px;
+      padding: unset;
+      overflow-y: scroll;
+      padding: 0 1rem;
+
+    }
+
+    &__total {
+      @include flex(space-between, center);
+
+      & span:last-child {
+        color: $main-color;
+      }
+    }
+
+    & a {
+      padding: unset;
+    }
+
+    &__button {
+      width: 90%;
+      margin: 0 auto 1rem auto;
+      padding: 0.5rem 0;
+      color: #fff;
+      background-color: $main-color;
+      cursor: pointer;
+      @include flex(center, center);
+      font-family: $font-family-bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      border: none;
+      outline: none;
+    }
+  }
+  &__item {
+    @include flex();
+    margin: 0.8rem 0;
+
+    &__image {
+      flex-grow: 1;
+      margin-right: 10px;
+      cursor: pointer;
+
+      & img {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    &__content {
+      width: 62%;
+      font-size: 0.7rem;
+
+      &__name {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+        text-transform: capitalize;
+        cursor: pointer;
+      }
+
+      &__size, &__quantity {
+        @include flex(space-between, center);
+        font-family: $font-family;
+      }
+    }
+  }
+}

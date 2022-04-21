@@ -1,0 +1,20 @@
+@use '../abstracts/' as *;
+
+.social-fixed {
+  position: fixed;
+  right: 0px;
+  top: 300px;
+  width: 40px;
+  background-color: #666;
+  padding: 0.5rem;
+  z-index: 100;
+  text-align: center;
+
+  @include header__mobile {
+    display: none;
+  }
+
+  & a img{
+    margin: 0.2rem 0;
+  }
+}

@@ -1,0 +1,102 @@
+@use '../abstracts/' as *;
+
+.footer {
+  width: 100%;
+  padding: 4rem 2rem;
+  // margin-top: 3rem;
+  background-color: $dark-color;
+
+  @include flex(space-between);
+
+  &__left {
+    flex: 1;
+    @include flex(center, center);
+    flex-direction: column;
+
+    @include header__mobile {
+      display: none;
+    }
+
+    & > * {
+      margin-bottom: 1rem;
+    }
+
+    & button {
+      background-color: $main-color;
+      padding: 0.5rem 3rem;
+      border: none;
+      font-size: 1.2rem;
+      font-family: $font-family-bold;
+      color: #fff;
+      text-transform: uppercase;
+
+      & a:hover{
+        color: unset;
+      }
+    }
+  }
+
+  &__right {
+    flex: 4;
+
+    &__menus {
+      @include flex(space-evenly);
+
+      @include header__mobile {
+        flex-wrap: wrap;
+      }
+
+    }
+    &__menu {
+      @include flex();
+      flex-direction: column;
+      
+
+      @include header__mobile {
+        width: 50%;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      &__title {
+        font-family: $font-family-bold;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        color: #fff;
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+
+      & a {
+        color: #cccccc;
+        font-size: 1rem;
+      }
+    }
+
+    &__logo {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    &__copyright {
+      @include flex(flex-start, center);
+      padding-left: 10rem;
+
+      @include header__mobile {
+        flex-direction: column;
+      }
+
+      & > * {
+        margin-right: 10rem;
+      }
+
+      & span {
+        font-size: 1.1rem;
+        color: #808080;
+      }
+    }
+  }
+}

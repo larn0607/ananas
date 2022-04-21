@@ -1,0 +1,11 @@
+@use './variables' as *;
+
+@mixin flex($justify-content: flex-start, $align-item: flex-start) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-item;
+}
+
+@mixin overlay {
+  background-color: rgba($color: $dark-color, $alpha: 0.6);
+}

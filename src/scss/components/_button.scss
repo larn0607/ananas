@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+
+.btn {
+  width: 100%;
+  margin: 1rem auto;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  cursor: pointer;
+
+  span {
+    font-size: 1.2rem;
+    font-family: $font-family-bold;
+    text-transform: uppercase;
+  }
+}

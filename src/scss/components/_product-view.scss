@@ -1,0 +1,167 @@
+@use '../abstracts/' as *;
+
+.product-view {
+  @include flex();
+
+  @include header__mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & > * {
+    padding: 2rem;
+  }
+
+  &__image {
+    width: 55%;
+    // padding: 2rem;
+
+    @include header__mobile {
+      width: 90%;
+    }
+
+    &__slider {
+      z-index: 0 !important;
+      .swiper-slide {
+        padding-top: 100%;
+        overflow: hidden;
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    &__slider__thumbs {
+      margin: 10px auto;
+      // text-align: center;
+      .swiper-slide {
+        cursor: pointer;
+        // border: 1px solid #000;
+
+        &-thumbs-active {
+          border-top: 1px solid #ccc;
+        }
+      }
+
+      .swiper-button-prev {
+        left: 0;
+        color: #000;
+
+        &::after {
+          font-size: 1.5rem;
+        }
+      }
+
+      .swiper-button-next {
+        right: 0;
+        color: #000;
+
+        &::after {
+          font-size: 1.5rem;
+        }
+      }
+
+      &__wrapper {
+        width: 100%;
+        padding-top: 100%;
+        overflow: hidden;
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+    font-size: 1rem;
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-family: "Nunito Sans ExtraBold", sans-serif;
+      font-size: 1.7rem;
+    }
+
+    &__des1 {
+      @include flex();
+
+      span.cond {
+        flex: 1;
+        @include flex(flex-end);
+
+        strong {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    &__price {
+      font-family: "Nunito Sans ExtraBold", sans-serif;
+      color: $main-color;
+      font-size: 1.4rem;
+    }
+
+    hr {
+      border: 1px dashed #8f8f8f;
+    }
+
+    &__select__dropdown {
+      position: relative;
+      // padding: 0 1rem;
+
+      &__btn {
+        width: 100%;
+        border: 1px solid #000;
+        padding: 0.2rem 0.5rem;
+        cursor: pointer;
+        font-weight: bold;
+        @include flex(space-between, center);
+      }
+
+      &__list {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        width: 100%;
+        border: 1px solid #000;
+        text-align: center;
+        padding: 0.2rem;
+        background-color: #fff;
+        z-index: 100;
+
+        &.cart-select {
+          width: 130%;
+        }
+
+
+        &__item {
+          border: 1px solid #000;
+          padding: 0.8rem;
+          margin: 0.1rem;
+          cursor: pointer;
+
+          &.active {
+            border-width: 2px;
+            border-radius: 5px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+  }
+}

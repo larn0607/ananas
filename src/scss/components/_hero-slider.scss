@@ -1,0 +1,12 @@
+.hero-slider {
+
+  &__swiper {
+    z-index: 0 !important;
+  }
+  &__item {
+    & a img {
+      width: 100%;
+    }
+  }
+
+}
