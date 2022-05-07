@@ -107,9 +107,6 @@ const Cart = () => {
           </div>
         </div>
       )}
-      <div className="alo">
-        dfsfjkdsfnkdslnfsklfsdnlfdnslnfdskl
-      </div>
     </Helmet>
   )
 }
