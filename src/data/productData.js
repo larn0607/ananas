@@ -300,6 +300,29 @@ const product = [
     ]
   },
   {
+    _id: 'AV00126',
+    type_product: 'Urbas',
+    name: 'Urbas Ruler',
+    color: 'Silver Pink',
+    type: 'shoes',
+    condition:'in stock',
+    designShoes: 'Low Top',
+    price: '590000',
+    NE: null,
+    size: [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46],
+    description: `Vẻ ngoài với màu sắc tươi tắn, hiện đại. Urbas Ruler mang trên mình một chức năng khiến không ít người bất ngờ, sẽ rất hữu ích dành cho những ai có thói quen dùng thước kẻ nhưng hay quên, mặc dù độ chính xác "chưa chắc cao".`,
+    images: [
+      urbas_ruler_pink_1,
+      urbas_ruler_pink_2,
+      urbas_ruler_pink_3,
+      urbas_ruler_pink_4,
+      urbas_ruler_pink_5,
+      urbas_ruler_pink_6,
+      urbas_ruler_pink_7,
+      urbas_ruler_pink_8,
+    ]
+  },
+  {
     _id: 'A6T010',
     type_product: 'Track 6',
     name: 'Track 6 Class E',

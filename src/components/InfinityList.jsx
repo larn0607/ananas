@@ -21,16 +21,18 @@ const InfinityList = props => {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if(window.scrollY + window.innerHeight >= listRef.current.clientHeight + listRef.current.offsetTop + 200) {
+      if(window.scrollY + window.innerHeight >= listRef.current.clientHeight + listRef.current.offsetTop + 400) {
         setLoad(true)
       }
     })
   }, [listRef])
 
+
   useEffect(() => {
     const getItems = () => {
       const pages = Math.floor(props.data.length / perLoad)
       const maxIndex = props.data.length % perLoad === 0 ? pages : pages + 1
+      console.log(pages, maxIndex,index)
 
       if (load && index <=maxIndex) {
         const start = perLoad * index

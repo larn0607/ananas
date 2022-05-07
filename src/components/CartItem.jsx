@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import numberWithCommas from '../utils/numberWithCommas'
 import Selected from './Selected'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { updateItem, removeItem } from '../redux/cart/cartItemsSlice'
 
