@@ -33,7 +33,7 @@ const InfinityList = props => {
       const pages = Math.floor(props.data.length / perLoad)
       const maxIndex = props.data.length % perLoad === 0 ? pages : pages + 1
 
-      if (load && index <=maxIndex) {
+      if (load && index < maxIndex) {
         const start = perLoad * index
         const end = start + perLoad
 
