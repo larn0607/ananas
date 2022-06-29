@@ -58,7 +58,7 @@ const Cart = () => {
                 className="cart__left__button__item"
                 onClick={handleReturnProduct}
               >
-                quay lại mua hàng
+                Quay lại mua hàng
               </div>
             </div>
           </div>
